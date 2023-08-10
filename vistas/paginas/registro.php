@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,20 +17,26 @@
         <div class="container">
             <div class="input-container">
             <i class="fa-solid fa-user" icon></i>
-            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="nombre" id='nombre' name="regnombre">
             </div>
 
             <div class="input-container">
             <i class="fa-solid fa-envelope" icon></i>
-            <input type="text" placeholder="Correo">
+            <input type="text" placeholder="email" id='email' name="regemail">
             </div>
 
             <div class="input-container">
             <i class="fa-solid fa-key" icon></i>
-            <input type="password" placeholder="Contraseña">
+            <input type="password" placeholder="password" id='pw' name="regpassword">
             </div>
 
         </div> 
+
+        <?php
+            require_once "controladores/formularios.controlador.php";
+            $registro = ControladorFormularios::ctrRegistro();
+        ?>
+
         <input type="submit" value="Registrate" class="button">
         <p>Aceptas condiciones de uso y políticas de privacidad</p>
 

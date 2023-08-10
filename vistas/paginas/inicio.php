@@ -6,16 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ViajAR</h1>
+    
+    <section class="banner">
 
-    <div class="banner">
+        <img src="public/bariloche.jpg">
+        <img src="public/mendoza.jpg">
+        <img src="public/jujuy.png">
+        <img src="public/cordoba.jpg">
 
-        <div class="elemento"><img src="public/b2.jfif"></div>
-        <div class="elemento"><img src="public/b3.jfif"></div>
-        
-        <div class="elemento"><img src="public/b1.jpg"></img></div>
-        <div class="elemento"><img src="public/b4.jpg"></div>
-       
-    </div>
+    </section>
+
 </body>
 </html>

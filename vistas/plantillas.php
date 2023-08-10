@@ -10,7 +10,7 @@
 <div id="contenedor">
 
         <header>
-
+       
             <nav>
                 <ul class="horizontal">
                     <li><a href="index.php?ruta=inicio">INICIO</a></li>
@@ -31,9 +31,11 @@
                 </ul>
             </nav>
 
-            <div id="marca">
             
-            </div>
+            <div class="logo">
+        <h1>Viaj<span style="color: #0995d6;"><strong>AR</strong></span></h1>
+        </div>
+            
     
         
         </header>

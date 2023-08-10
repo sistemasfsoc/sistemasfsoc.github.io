@@ -19,17 +19,27 @@ body {
 
 }
 
-.imagen{
-width: 100%;
-
+.banner{
+display: flex;
+width: 600px;
+height: 430px;
 
 }
-.banner{
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
 
-    }
+.banner img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5 ease;
+}
+
+.banner img:hover{
+    cursor: crosshair;
+    width: 300px;
+    filter: contrast(120%);
+}
+
 
 .elemento{
     flex: auto;
