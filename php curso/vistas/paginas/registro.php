@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,34 +10,37 @@
 </head>
 
 <body>
-    <form action="" class="form" method="post">
+    <form  action="" class="form" method="post">
 
-        <h1>INGRESA</i></h1> 
+        <h1>REGISTRO</i></h1> 
 
-        <div class="contenedor">
-           
+        <div class="container">
+            <div class="input-container">
+            <i class="fa-solid fa-user" icon></i>
+            <input type="text" placeholder="nombre" id='nombre' name="regnombre">
+            </div>
 
             <div class="input-container">
             <i class="fa-solid fa-envelope" icon></i>
-            <input type="email" placeholder="Correo">
+            <input type="text" placeholder="email" id='email' name="regemail">
             </div>
 
             <div class="input-container">
             <i class="fa-solid fa-key" icon></i>
-            <input type="password" name="ingresoPassword" placeholder="Contraseña">
+            <input type="password" placeholder="password" id='pw' name="regpassword">
             </div>
-            
 
         </div> 
+
         <?php
             require_once "controladores/formularios.controlador.php";
-            $ingreso = new ControladorFormularios();
-            $ingreso -> ctrIngreso();
+            $registro = ControladorFormularios::ctrRegistro();
         ?>
-        <input type="submit" value="Ingresar" class="button">
+
+        <input type="submit" value="Registrate" class="button">
         <p>Aceptas condiciones de uso y políticas de privacidad</p>
 
-        <p>¿No tenés cuenta? <a class="link" href="index.php?ruta=registro"> Registrate</a><p>
+        <p>¿Ya tenés cuenta? <a class="link" href="index.php?ruta=ingreso"> Iniciá sesión con tus credenciales</a><p>
 
     
 </form>
