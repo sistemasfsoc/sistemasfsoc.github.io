@@ -6,7 +6,7 @@ class ModeloFormularios{
 
     static public function mdlRegistro($tabla, $datos){
         $stmt = Conexcion::conectar()->prepare("INSERT INTO $tabla(nombre,email,password) VALUES (:nombre, :email, :password)");
-        
+
         $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
         $stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
         $stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
@@ -23,15 +23,18 @@ class ModeloFormularios{
     static public function mdlSeleccionarRegistro($tabla,$item,$valor){
         if($item == null && $valor == null){
             $stmt = Conexcion:: conectar()->prepare("SELECT *, DATE_FORMAT(fecha, '%d/%m/Y') AS fecha FROM $tabla ORDER BY id DESC ");
+            $stmt->execute();
+
+			return $stmt->fetchAll();
         }else{
-            $stmt = Conexcion:: conectar()->prepare("SELECT *, DATE_FORMAT(fecha, '%d/%m/Y') AS fecha FROM $tabla ORDER BY id DESC ");
+            $stmt = Conexcion:: conectar()->prepare("SELECT *, DATE_FORMAT(fecha, '%d/%m/Y') AS fecha FROM $tabla WHERE $item = :$item ORDER BY id DESC ");
+            $stmt->bindParam(":" . $item, $valor, PDO::PARAM_STR);
             $stmt ->execute();
             return $stmt ->fetch();
-                    
+               
         }
-        $stmt->closeCursor();
+        
         $stmt = null;
-
     }
 
     static public function mdlActualizarRegistros($tabla,$datos){

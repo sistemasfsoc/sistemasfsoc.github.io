@@ -43,7 +43,7 @@ class ControladorFormularios{
 
             $encriptarPassword = crypt($_POST["ingresoPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
-            if($respuesta["regemail"] == $_POST["ingresoEmail"] && $respuesta["password"] == $encriptarPassword){
+            if($respuesta["email"] == $_POST["ingresoEmail"] && $respuesta["password"] == $encriptarPassword){
                 $_SESSION["validarIngreso"] == "ok";
                 echo '<script>
                 
